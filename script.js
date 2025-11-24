@@ -15,35 +15,40 @@ btn.addEventListener('click', function() {
         alert('Please enter the required fields');
     }
     else{
-        reset.disabled = false;
-        first.style.backgroundColor = 'white';
-        sec.style.backgroundColor = 'white';
-        third.style.backgroundColor = 'white';
-        fourth.style.backgroundColor = 'white';
-        first.style.color = 'black';
-        sec.style.color = 'black';
-        third.style.color = 'black';
-        fourth.style.color = 'black';
-        let height = (feet.value * 0.3048) + (inch.value * 0.0254);
-        let BMI = weigth.value/(height * height);
-        placeHold.innerText = `YOUR BMI IS ${BMI.toFixed(1)}`;
-        if(BMI < 18.5) {
-            first.style.backgroundColor = '#4CAF50';
-            first.style.color = 'white';
-        }
-        else if(BMI >= 18.5 && BMI <= 24.9) {
-            sec.style.backgroundColor = '#4CAF50';
-            sec.style.color = 'white';
-        }
-        else if(BMI >= 25 && BMI <= 29.9) {
-            third.style.backgroundColor = '#4CAF50';
-            third.style.color = 'white';
+        if(weight.value >= 0 && weight.value <= 250) {
+            reset.disabled = false;
+            first.style.backgroundColor = 'white';
+            sec.style.backgroundColor = 'white';
+            third.style.backgroundColor = 'white';
+            fourth.style.backgroundColor = 'white';
+            first.style.color = 'black';
+            sec.style.color = 'black';
+            third.style.color = 'black';
+            fourth.style.color = 'black';
+            let height = (feet.value * 0.3048) + (inch.value * 0.0254);
+            let BMI = weigth.value/(height * height);
+            placeHold.innerText = `YOUR BMI IS ${BMI.toFixed(1)}`;
+            if(BMI < 18.5) {
+                first.style.backgroundColor = '#4CAF50';
+                first.style.color = 'white';
+            }
+            else if(BMI >= 18.5 && BMI <= 24.9) {
+                sec.style.backgroundColor = '#4CAF50';
+                sec.style.color = 'white';
+            }
+            else if(BMI >= 25 && BMI <= 29.9) {
+                third.style.backgroundColor = '#4CAF50';
+                third.style.color = 'white';
+            }
+            else {
+                fourth.style.backgroundColor = '#4CAF50';
+                fourth.style.color = 'white';
+            }
         }
         else {
-            fourth.style.backgroundColor = '#4CAF50';
-            fourth.style.color = 'white';
+            alert('Enter weight between 0 and 250');
         }
-        }
+    }
 })
 reset.addEventListener('click', function() {
     placeHold.innerText = 'BMI CATEGORIES';
@@ -59,4 +64,5 @@ reset.addEventListener('click', function() {
     sec.style.color = 'black';
     third.style.color = 'black';
     fourth.style.color = 'black';
+
 })
