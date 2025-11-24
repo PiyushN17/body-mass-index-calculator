@@ -11,8 +11,8 @@ let reset = document.getElementById('reset');
 
 
 btn.addEventListener('click', function() {
-    if(weigth.value.length === 0 || feet.value === ''|| inch.value === '') {
-        alert('Please enter the required fields');
+    if(weigth.value.length === 0 || feet.value === ''|| inch.value === '' || !(weigth.value >= 0 && weigth.value <= 250)) {
+        alert('Please enter the required fields or weight between 0 and 250');
     }
     else{
         reset.disabled = false;
