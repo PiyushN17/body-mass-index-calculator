@@ -17,8 +17,10 @@ body {
 #main-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;  /* Aligns containers to the top of the screen */
-    gap: 20px;  /* Adds some space between the two containers */
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 #container1, #container2 {
@@ -28,6 +30,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 400px;
     max-width: 100%;
+    margin-bottom: 20px;
 }
 
 #heading {
@@ -119,8 +122,62 @@ button:hover {
     background-color: white;
 }
 
-
-
 #table td {
     font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    #main-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    #container1, #container2 {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #heading {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button, input[type="submit"]#reset {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    #table th, #table td {
+        font-size: 14px;
+    }
+
+    #table td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    #heading {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    button, input[type="submit"]#reset {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #table th, #table td {
+        font-size: 12px;
+    }
+
+    #table td {
+        padding: 6px;
+    }
 }
